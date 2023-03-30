@@ -1,8 +1,8 @@
-import { React, useState,  useContext } from "react";
+import { React, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import axios from "axios";
-import logo from "../../assets/GatewayGroup.svg";
+import logo from "../../assets/GatewayGroup.png";
 import otpIcon from "../../assets/otp-icon.png";
 import "./Login.css";
 import { currentUserContext } from "../../context/ContextProvider";
