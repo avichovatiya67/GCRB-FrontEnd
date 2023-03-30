@@ -1,0 +1,8 @@
+div.MuiTablePagination-root > div.MuiToolbar-root > p {
+  margin-bottom: 0;
+  padding: 0;
+}
+div.MuiTablePagination-root > div.MuiToolbar-root > p {
+  padding: 0;
+  margin-bottom: 0;
+}

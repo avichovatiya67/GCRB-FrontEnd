@@ -1,0 +1,68 @@
+.bgi {
+  background-image: url("../../assets/conference-room-technologies.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transition: all 3s;
+}
+
+.bgi:hover {
+  transform: scale(1.2);
+  transition: all 3s;
+}
+
+.phone,
+.phone:hover {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.partitioned {
+  padding-left: 9px;
+  padding-right: 0px;
+  letter-spacing: 22px;
+  border: 0;
+  font-size: 20px;
+  background-color: transparent;
+  background-image: linear-gradient(
+    to left,
+    rgb(85, 79, 79) 70%,
+    rgba(8, 8, 8, 0) 0%
+  );
+  background-position: bottom;
+  background-position-x: -4px;
+  background-size: 33px 2px;
+  background-repeat: repeat-x;
+  width: inherit;
+  min-width: 210px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.partitioned:focus {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.divInner {
+  left: 0;
+  width: inherit;
+  position: sticky;
+}
+
+.divOuter {
+  width: 200px;
+  overflow: hidden;
+  align-items: center;
+}
+
+.box {
+  display: block;
+  transition: width 3s, height 3s, background-color 3s, transform 1s;
+}
+
+.box:hover {
+  width: 1000px;
+  float: inline-start;
+  /* rotate: 180deg; */
+}

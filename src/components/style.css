@@ -1,0 +1,140 @@
+.side_nav {
+  /* Auto layout */
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0px 0px;
+  gap: 20px;
+
+  width: 70px;
+  /* height: 100vh; */
+
+  background: #ffffff;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.logo {
+  /* logo 1 */
+  /* background-image: url(./resources/logo.png); */
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.nav_options {
+  /* Nav Options */
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 0px;
+  gap: 20px;
+
+  width: inherit;
+  /* height: 100%; */
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.nav_menu {
+  /* Menu */
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 38px 0px;
+  gap: 10px;
+
+  width: inherit;
+  /* height: 100%; */
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.nav_logout {
+  /* logout */
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 3px 5px;
+  gap: 10px;
+
+  width: inherit;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+/* ================================== History Card ================================== */
+
+.hoverEffect {
+  position: relative;
+  transition: "all 3s ease-in-out";
+}
+
+.buttonDiv {
+  display: block;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  background-blend-mode: overlay;
+  background: rgba(65, 65, 65, 0.5);
+  transition: "all 3s ease-in-out";
+}
+
+#historyCard::after {
+  content: "";
+  display: inline-block;
+  font-size: 15px;
+  color: #ffffff;
+  font-weight: 900;
+  font-family: "Font Awesome 5 Free";
+  /* / Replace the font-family with the font that contains the icon you want to use / */
+  content: "\f142";
+  /* / Replace the unicode value with the unicode value of the icon you want to use / */
+}
+
+/* =================================== Table for Booking Preview =================================== */
+.table td,
+.table th {
+  vertical-align: top;
+  padding-block: 0;
+}
+
+/* =================================== Scheduler =================================== */
+table.scheduler > thead > tr > td > div > div > div.header2-text {
+  display: flex;
+  align-items: center;
+}
+
+table.scheduler-content-table > tbody > tr > td > div.event-container {
+  display: flex;
+  align-items: center;
+}
