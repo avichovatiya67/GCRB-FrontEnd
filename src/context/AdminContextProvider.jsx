@@ -9,7 +9,7 @@ const AdminContextProvider = ({ children }) => {
   // Users
   const getUsers = () => {
     axios
-      .get(`/users`)
+      .get(`${process.env.REACT_APP_API_URL}/users`)
       .then((res) => {
         setUsers(res.data.data);
       })

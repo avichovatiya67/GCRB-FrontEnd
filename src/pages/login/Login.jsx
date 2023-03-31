@@ -29,7 +29,7 @@ function Login() {
   const validateUser = () => {
     setError("");
     axios
-      .post(`/validateUser`, {
+      .post(`${process.env.REACT_APP_API_URL}/validateUser`, {
         password: password,
         username: username,
       })

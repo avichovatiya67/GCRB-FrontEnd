@@ -236,7 +236,12 @@ const Form = () => {
           if (Object.keys(main).includes("_id") && Boolean(updatingEvent)) {
             // alert("Updated");
             axios
-              .patch(`/updateBooking/${main._id}`, { main })
+              .patch(
+                `${process.env.REACT_APP_API_URL}/updateBooking/${main._id}`,
+                {
+                  main,
+                }
+              )
               .then(async (res) => {
                 console.log("Data SuccessFully Updated: \n", res);
                 // setBookingHistory([...bookingHistory, main]);
@@ -261,7 +266,7 @@ const Form = () => {
             // alert("Created");
             delete main?._id;
             axios
-              .post("/postBooking", { main })
+              .post(`${process.env.REACT_APP_API_URL}/postBooking`, { main })
               .then(async (res) => {
                 console.log("Data SuccessFull Insert: \n", res);
                 setBookingHistory([...bookingHistory, res.data.data]);
@@ -447,7 +452,9 @@ const Form = () => {
       if (value.length > 2) {
         setLoadingAuto(true);
         axios
-          .get(`/searchUser?searchText=${value}`)
+          .get(
+            `${process.env.REACT_APP_API_URL}/searchUser?searchText=${value}`
+          )
           .then((response) => {
             setSearchedUsers(() => response.data.data);
             setLoadingAuto(false);

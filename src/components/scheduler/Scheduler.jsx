@@ -387,7 +387,7 @@ const Basic = () => {
     );
     if (confirm) {
       return axios
-        .patch(`/cancelBooking/${event._id}`)
+        .patch(`${process.env.REACT_APP_API_URL}/cancelBooking/${event._id}`)
         .then((res) => {
           console.log(res);
           toast.success(res.data.message, {

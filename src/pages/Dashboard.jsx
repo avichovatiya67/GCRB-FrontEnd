@@ -70,7 +70,11 @@ const Dashboard = () => {
               color="error"
               onClick={() =>
                 axios
-                  .patch(`/cancelBooking/${openCancelConfirm.split("$")[0]}`)
+                  .patch(
+                    `${process.env.REACT_APP_API_URL}/cancelBooking/${
+                      openCancelConfirm.split("$")[0]
+                    }`
+                  )
                   .then((res) => {
                     console.log(res);
                     toast.success(res.data.message, {

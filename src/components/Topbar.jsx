@@ -184,12 +184,16 @@ const Topbar = () => {
         <MenuItem
           onClick={() => {
             localStorage.removeItem("currentUser");
-            axios.get(`/logoutUser/${currentUser?._id}`).then((res) => {
-              toast.success(res.data.message, {
-                position: toast.POSITION.BOTTOM_CENTER,
+            axios
+              .get(
+                `${process.env.REACT_APP_API_URL}/logoutUser/${currentUser?._id}`
+              )
+              .then((res) => {
+                toast.success(res.data.message, {
+                  position: toast.POSITION.BOTTOM_CENTER,
+                });
+                navigate("/login");
               });
-              navigate("/login");
-            });
             setCurrentUser({});
           }}
         >
@@ -259,7 +263,10 @@ const Topbar = () => {
               console.log(
                 locations.filter((l) => l._id === currentUser.location)[0].city
               );
-              axios.post("/sendEmail", mailBody);
+              axios.post(
+                `${process.env.REACT_APP_API_URL}/sendEmail`,
+                mailBody
+              );
             }}
           >
             Submit

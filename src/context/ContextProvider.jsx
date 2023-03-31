@@ -18,6 +18,7 @@ export const filterEventsContext = createContext();
 export const openCancelConfirmContext = createContext();
 
 const ContextProvider = ({ children }) => {
+  // dotenv.config();
   const [locations, setLocations] = useState([]);
   const [myResources, setMyResources] = useState([]);
   const [allResources, setAllResources] = useState([]);
@@ -64,8 +65,9 @@ const ContextProvider = ({ children }) => {
 
   // Get All Locations
   const getLocations = () => {
+    console.log(process.env.REACT_APP_API_URL);
     axios
-      .get(`/getLocations`)
+      .get(`${process.env.REACT_APP_API_URL}/getLocations`)
       .then((res) => {
         setLocations(res.data);
       })
@@ -80,7 +82,7 @@ const ContextProvider = ({ children }) => {
   // Get All Users
   const getUsers = () => {
     axios
-      .get(`/users`)
+      .get(`${process.env.REACT_APP_API_URL}/users`)
       .then((res) => {
         setAllUserData(res.data.data);
         // setCurrentUser(res.data.data[-1]);
@@ -96,7 +98,7 @@ const ContextProvider = ({ children }) => {
   // Get All Resources
   const getResources = () => {
     axios
-      .get(`/getResource`)
+      .get(`${process.env.REACT_APP_API_URL}/getResource`)
       .then((res) => {
         setAllResources(res.data);
       })
@@ -112,7 +114,9 @@ const ContextProvider = ({ children }) => {
   const getBookingsByOrg = () => {
     if (currentUser?._id) {
       axios
-        .get(`/getBookingByOrg?id=${currentUser._id}`)
+        .get(
+          `${process.env.REACT_APP_API_URL}/getBookingByOrg?id=${currentUser._id}`
+        )
         .then((res) => {
           setBookingHistory(res.data.data);
         })
@@ -128,7 +132,7 @@ const ContextProvider = ({ children }) => {
   // Get All Bookings
   const getAllBookings = async () => {
     await axios
-      .get(`/getBookingByOrg`)
+      .get(`${process.env.REACT_APP_API_URL}/getBookingByOrg`)
       .then((res) => {
         setAllBookings(res.data.data);
       })
