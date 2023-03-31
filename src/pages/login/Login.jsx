@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import axios from "axios";
 import logo from "../../assets/GatewayGroup.png";
-import otpIcon from "../../assets/otp-icon.png";
+import otpIcon from "../../assets/password.png";
 import "./Login.css";
 import { currentUserContext } from "../../context/ContextProvider";
 import {
@@ -76,7 +76,13 @@ function Login() {
     return (
       <div id="login">
         <p>
-          <img className="img-fluid" src={otpIcon} alt="verification" />
+          <img
+            className="img-fluid"
+            src={otpIcon}
+            alt="Login"
+            height="100rem"
+            width="100rem"
+          />
         </p>
         <p className="text-muted">
           Enter your GIS login details <br />
